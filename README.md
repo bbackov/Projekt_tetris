@@ -1,42 +1,25 @@
 # Tetris (OpenGL C++)
 
-Simple Tetris game built in C++ using OpenGL.
+Jednostavna Tetris igra izrađena u C++ koristeći OpenGL.
 
-## Technologies
+## Tehnologije
 
 - C++
 - OpenGL (GLFW + GLAD)
-- stb_truetype (font rendering)
+- stb_truetype (renderiranje fontova)
 
-## Controls
+## Kontrole
 
-- ⬅️ ➡️ Move left / right  
-- ⬇️ Soft drop  
-- ⬆️ Rotate (CW)  
-- A Rotate (CCW)  
-- Space Hard drop  
-- C Hold piece  
-- P Pause  
-- ESC Exit  
+- ⬅️ ➡️ Pomak lijevo / desno  
+- ⬇️ Ubrzano spuštanje  
+- ⬆️ Rotacija (u smjeru kazaljke na satu)  
+- A Rotacija (suprotno od kazaljke na satu)  
+- Space Trenutno spuštanje (hard drop)  
+- C Držanje bloka (hold)  
+- P Pauza  
+- ESC Izlaz  
 
-## How to Run
+## Pokretanje (MSYS2 MinGW64)
 
-1. Build the project (g++ / Visual Studio / CMake)
-2. Make sure required libraries are linked:
-   - GLFW
-   - GLAD
-3. Run the executable
-
-## Structure
-
-- `game/` – core game logic  
-- `board/` – grid and collision  
-- `blocks/` – tetromino shapes  
-- `util/` – shaders, timers, helpers  
-- `input/` – input handling  
-
-## Notes
-
-- Uses modern OpenGL (Core Profile)
-- Rendering is done manually (no engine)
-- Project made for learning graphics and game logic
+```bash
+g++ src/main.cpp src/glad.c src/*/*.cpp -Iinclude -L/mingw64/lib -lglfw3 -lopengl32 -lgdi32 -luser32 -std=c++20 -O2 -o Tetris.exe
